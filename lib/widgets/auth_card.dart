@@ -103,15 +103,14 @@ class _AuthCardState extends State<AuthCard> {
                     onPressed: (){
                       
                    
-                      // Networks().login(userNameController.text,passwordController.text).then((e){
-                      //   if(e==200){
-                      //     Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>PromoterScreen()));
-                      //   }
-                      //   else{
-                      //     return _showErrorDialog('Please Provide valid credentials');
-                      //   }
-                      // });
-Provider.of<DrrProvider>(context,listen: false).payments();
+                      Networks().login(userNameController.text,passwordController.text).then((e){
+                        if(e==200){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>PromoterScreen()));
+                        }
+                        else{
+                          return _showErrorDialog('Please Provide valid credentials');
+                        }
+                      });
 
                     }
                   ),
